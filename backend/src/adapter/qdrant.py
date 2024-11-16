@@ -19,7 +19,6 @@ class QdrantAdapter:
             print(f"Collection '{name}' already exists.")
 
     def batch_upsert(self, collection_name: str, product_points: list[ProductPoint]):
-        # todo: fix this
         points = [
             models.PointStruct(
                 id=point.id,

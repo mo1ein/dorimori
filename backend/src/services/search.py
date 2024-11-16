@@ -20,9 +20,3 @@ class Search:
         encoded_text: torch.Tensor = text_encoder.encode(text)
         result = self.product_repository.find_similar(config.DATABASE_QDRANT_COLLECTION_NAME, encoded_text)
         return result
-
-
-if __name__ == "__main__":
-    search = Search()
-    a = search.find_similar("red tie")
-    print(a)

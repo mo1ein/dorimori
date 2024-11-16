@@ -37,6 +37,5 @@ class ProductPoint(BaseModel):
     payload: ProductPayload
 
 
-# todo: fix this is ok?
 class ListProductPoint(BaseModel):
     points: list[ProductPoint]
