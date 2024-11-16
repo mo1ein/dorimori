@@ -2,7 +2,8 @@
 This project is an interview task related to vector search for the Dori Mori Pori interview.
 ### Description
 The objective of this project is to develop an application that encodes data and saves it to a vector database (such as Qdrant). The backend system receives queries from users, encodes them, and finds similar items in the database. Additionally, a frontend page is provided to display the images. The project also includes a data pipeline for processing the data in batches.
-The dataset used in this project is located in the products.json file.
+The dataset used in this project is located in the `products.json` file.
+You can see full description [here](https://docs.google.com/document/d/e/2PACX-1vQhiohsEE3YE8pOEMKZyyWHpsrmH1WBXbnRkEGb5GQqQ_Rb3m5xO_ya-ODoIQ1j1pRxW5QYSf09eAwN/pub).
 ### Approach
 I implemented a job for the data pipeline that reads the JSON dataset and inserts it into the database chunk by chunk. Each batch's progress is saved as a checkpoint in a checkpoint.txt file, allowing the service to continue and resume work after any failure. This process operates within containers for the API, database, and frontend services.
 The technologies used include Qdrant, Pydantic, FastAPI, and CLIP models.
