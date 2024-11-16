@@ -34,5 +34,6 @@ docker compose up -d
 
 ### Run
 After building your containers, you can use the services as follows:
-Access the backend API at `http://localhost:8080`.
+Access the backend API swagger at `http://localhost:8080/docs`.
+Access the qdrant dashboard `http://localhost:6333`.
 Access the frontend interface at `http://localhost:3000` (or whatever port is specified).
