@@ -30,9 +30,6 @@ services:
     environment:
       - DATABASE_QDRANT_HOST=${DATABASE_QDRANT_HOST:-qdrant}
       - DATABASE_QDRANT_PORT=${DATABASE_QDRANT_PORT:-6333}
-#      - DATABASE_QDRANT_COLLECTION_NAME=products
-#      - DATASET_PATH=/app/products.json
-#      - CHECKPOINT_PATH=/app
     command: [ "python", "-m", "src.services.data" ]
     depends_on:
       - qdrant
