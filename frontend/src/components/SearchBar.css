@@ -1,0 +1,59 @@
+/* src/styles/SearchBar.css */
+
+.container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    /* Center text alignment */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center; /* Center the search bar */
+    margin: 20px auto; /* Centering with margin */
+}
+
+.search-input {
+    height: 48px;
+    border-radius: 24px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 8px;
+    transition: border-color 0.3s ease;
+    width: 230px; /* Decreased width of the input field */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search-button {
+    box-shadow: rgb(220, 36, 76);
+    background: linear-gradient(rgb(220, 36, 76), rgb(190, 0, 58));
+    height: 48px;
+    border-radius: 24px;
+    margin-left: -5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0 20px;
+    transition: background-color 0.3s ease,
+    transform 0.2s ease;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

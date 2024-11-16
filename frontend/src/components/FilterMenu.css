@@ -1,0 +1,42 @@
+.filter-menu {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Spacing inside the box */
+    max-width: 300px; /* Set a maximum width */
+    margin: 20px auto; /* Center the menu on the page */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.filter-menu h3 {
+    font-size: 1.5em; /* Slightly larger heading */
+    margin-bottom: 12px; /* Space below the heading */
+    color: #333; /* Darker text for readability */
+    text-align: center;
+}
+
+.filter-menu label {
+    display: block; /* Stack labels above inputs */
+    margin-bottom: 4px; /* Space between label and input */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.filter-menu input[type="number"],
+.filter-menu select {
+    width: 100%;
+    padding: 8px; /* Padding inside inputs/selects */
+    margin-bottom: 12px; /* Space between inputs/selects */
+    border: 1px solid #ccc; /* Border for inputs/selects */
+    border-radius: 4px; /* Rounded corners for inputs/selects */
+    font-size: 1em; /* Font size for better readability */
+}
+
+.filter-menu input[type="number"]:focus,
+.filter-menu select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.filter-menu option {
+    padding: 8px; /* Padding for options in select */
+}

@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${API_PORT:-8000}:${API_PORT:-8000}"
+    depends_on:
+      - qdrant
+    volumes:
+      - .:/app
+    restart: always
+    command: [ "python", "-m", "main" ]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "${DATABASE_QDRANT_PORT:-6333}:${DATABASE_QDRANT_PORT:-6333}"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  data_pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_QDRANT_HOST=${DATABASE_QDRANT_HOST:-qdrant}
+      - DATABASE_QDRANT_PORT=${DATABASE_QDRANT_PORT:-6333}
+#      - DATABASE_QDRANT_COLLECTION_NAME=products
+#      - DATASET_PATH=/app/products.json
+#      - CHECKPOINT_PATH=/app
+    command: [ "python", "-m", "src.services.data" ]
+    depends_on:
+      - qdrant
+    volumes:
+      - .:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: on-failure
+
+volumes:
+  qdrant_data:
