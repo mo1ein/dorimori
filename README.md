@@ -19,7 +19,6 @@ docker compose up -d
 ```
 If you want to run it locally with Python or wish to change configurations, create a `.env` file:
 ```bash
-cd backend
 cp .env.example .env
 ```
 Then modify the configurations as needed.

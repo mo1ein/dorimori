@@ -42,7 +42,6 @@ class DataPipeline:
         )
 
         while True:
-            print("in loop")
             data = JsonProcessor.read(self.input_file)
             start_index = self.load_checkpoint()
             total_batches = (len(data) + 10 - 1) // 10

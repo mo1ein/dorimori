@@ -6,7 +6,6 @@ router = APIRouter()
 
 # todo: fix const instead of search
 @router.get("/api/v1/search", response_model=ListProductPoint, tags=["Search"])
-# todo: querystring?!
 
 def search(query: str = Query(...)) -> ListProductPoint:
     search_logic = Search()
