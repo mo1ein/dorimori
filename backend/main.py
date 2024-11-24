@@ -9,6 +9,7 @@ app = FastAPI()
 
 origins = ["*"]
 
+# todo: remove * for security ...
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
