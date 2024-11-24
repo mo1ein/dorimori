@@ -39,7 +39,7 @@ const App = () => {
   };
 
   const handleFilterChange = ({priceRange:{from, to}, category}) => {
-    const q = `from=${from}&to=${to}&category=${category}`
+    const q = `from_price=${from}&to_price=${to}`
     setFilters(q);
   };
 
