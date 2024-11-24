@@ -105,7 +105,6 @@ class QdrantAdapter:
             limit=20,
             query_filter=filter_conditions
         )
-        print("diiiir")
 
         results = [ProductPoint(id=result.id, vector=result.vector, payload=result.payload) for result in search_result]
 
