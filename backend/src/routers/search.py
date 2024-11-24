@@ -98,7 +98,6 @@ def search(
                         filters.append({"field": field, "operation": "eq", "value": item})
                 elif isinstance(value, (str, float, bool, int)):  # Handle single values
                     filters.append({"field": field, "operation": "eq", "value": value})
-
         for field, value in dynamic_filters.items():
             if value is not None:
                 filters.append({"field": field, "operation": "eq", "value": value})
@@ -109,6 +108,5 @@ def search(
             filters=filters
         )
         return result
-
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
